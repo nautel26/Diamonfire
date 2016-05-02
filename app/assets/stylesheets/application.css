@@ -10,6 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require custom.css.scss
+ *= require style.css.scss
+ *= require style-responsive.css
+ *= require animate.min.css
+ *= require vertical-rhythm.min.css
+ *= require owl.carousel
+ *= require magnific-popup.css
  */
