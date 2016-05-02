@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 5.times do |i|
-  product_category = ProductCategory.create name: Faker::Commerce.department,
+  category = Category.create name: Faker::Commerce.department,
    description: Faker::Lorem.paragraph
   10.times do |ii|
-    product_category.products.create name: Faker::Commerce.product_name,
+    category.products.create name: Faker::Commerce.product_name,
       price: Faker::Commerce.price, sku: Faker::Code.isbn,
       description: Faker::Lorem.paragraph
   end
