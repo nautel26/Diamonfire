@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Diamonfire</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= full_title yield(:title) %></title>
+    <meta name="description" content="DiamonShop">
+    <meta name="keywords" content="DiamonShop">
+    <meta charset="utf-8">
+    <meta name="author" content="Trungnn142">
 
-<%= yield %>
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-</body>
+    <!-- Vendor CSS -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <!-- Specific Page Vendor CSS -->
+    <%= content_for :specific_page_css %>
+    <!-- JS -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="appear-animate">
+    <%= content_for :page_loader %>
+    <div class="page" id="top">
+      <%= content_for :home_section %>
+      <%= render "layouts/header" %>
+      <%= yield %>
+    </div>
+    <!-- JS -->
+    <%= javascript_include_tag 'all.js', 'data-turbolinks-track' => true %>
+    <!-- Specific Page Vendor JS -->
+    <%= content_for :specific_page_js %>
+  </body>
 </html>
+

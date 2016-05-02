@@ -1,0 +1,243 @@
+<% content_for(:home_section) do %>
+  <section class="small-section bg-dark" data-background="<%= image_url 'section-bg-5.jpg' %>">
+    <div class="relative container align-left">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Blog</h1>
+          <div class="hs-line-4 font-alt">
+            We share our best ideas in our blog
+          </div>
+        </div>
+        <div class="col-md-4 mt-30">
+          <div class="mod-breadcrumbs font-alt align-right">
+            <a href="#">Home</a>&nbsp;/&nbsp;<a href="#">Blog</a>&nbsp;/&nbsp;<span>Classic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<!-- Search Section -->
+<section class="small-section">
+  <div class="container relative">
+    <form class="form-inline form" role="form">
+      <div class="search-wrap">
+        <button class="search-button animate" type="submit" title="Start Search">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" class="form-control search-field" placeholder="Search...">
+      </div>
+    </form>
+  </div>
+</section>
+<!-- End Search Section -->
+<!-- Divider -->
+<hr class="mt-0 mb-0"/>
+<!-- End Divider -->
+
+<!-- Section -->
+<section class="page-section">
+  <div class="container relative">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-sm-10 col-sm-offset-1">
+        <!-- Post -->
+        <div class="blog-item">
+          <!-- Date -->
+          <div class="blog-item-date">
+              <span class="date-num">05</span>Feb
+          </div>
+          <!-- Post Title -->
+          <h2 class="blog-item-title font-alt"><%= link_to "Post with media gallery", blog_single_path, data: {no_turbolink: true} %></h2>
+          <!-- Author, Categories, Comments -->
+          <div class="blog-item-data">
+            <a href="#"><i class="fa fa-user"></i> John Doe</a>
+            <span class="separator">&nbsp;</span>
+            <i class="fa fa-folder-open"></i>
+            <a href="">Design</a>, <a href="#">Branding</a>
+            <span class="separator">&nbsp;</span>
+            <a href="#"><i class="fa fa-comments"></i> 5 Comments</a>
+          </div>
+          <!-- Media Gallery -->
+          <div class="blog-media">
+            <ul class="clearlist content-slider">
+              <li>
+                <%= image_tag "full-project-1.jpg", alt: "" %>
+              </li>
+              <li>
+                <%= image_tag "full-project-2.jpg", alt: "" %>
+              </li>
+              <li>
+                <%= image_tag "full-project-3.jpg", alt: "" %>
+              </li>
+            </ul>
+          </div>
+          <!-- Text Intro -->
+          <div class="blog-item-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non laoreet dui. Morbi lacus massa, euismod ut turpis molestie, tristique sodales est. Integer sit amet mi id sapien tempor molestie in nec massa.
+            </p>
+          </div>
+          <!-- Read More Link -->
+          <div class="blog-item-foot">
+            <%= link_to blog_single_path, class: "btn btn-mod btn-round  btn-small", data: {no_turbolink: true} do %>
+              Read More <i class="fa fa-angle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Post -->
+
+        <!-- Post -->
+        <div class="blog-item">
+          <!-- Date -->
+          <div class="blog-item-date">
+            <span class="date-num">04</span>Feb
+          </div>
+          <!-- Blockquote -->
+          <blockquote class="blog-item-q">
+            <p>
+              <a href="#">Curabitur iaculis, ligula facilisis volutpat suscipit, sapien felis tempor, consequat vitae velit.</a>
+            </p>
+          </blockquote>
+          <!-- End Blockquote -->
+          <!-- Author, Categories, Comments -->
+          <div class="blog-item-data">
+            <a href="#"><i class="fa fa-user"></i> John Doe</a>
+            <span class="separator">&nbsp;</span>
+            <i class="fa fa-folder-open"></i>
+            <a href="">Design</a>, <a href="#">Branding</a>
+            <span class="separator">&nbsp;</span>
+            <a href="#"><i class="fa fa-comments"></i> 5 Comments</a>
+          </div>
+          <!-- Read More Link -->
+          <div class="blog-item-foot">
+            <%= link_to blog_single_path, class: "btn btn-mod btn-round  btn-small", data: {no_turbolink: true} do %>
+              Read More <i class="fa fa-angle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Post -->
+
+        <!-- Post -->
+        <div class="blog-item">
+          <!-- Date -->
+          <div class="blog-item-date">
+            <span class="date-num">03</span>Feb
+          </div>
+          <!-- Post Title -->
+          <h2 class="blog-item-title font-alt"><%= link_to "Video post only", blog_single_path, data: {no_turbolink: true} %></h2>
+          <!-- Author, Categories, Comments -->
+          <div class="blog-item-data">
+            <a href="#"><i class="fa fa-user"></i> John Doe</a>
+            <span class="separator">&nbsp;</span>
+            <i class="fa fa-folder-open"></i>
+            <a href="">Design</a>, <a href="#">Branding</a>
+            <span class="separator">&nbsp;</span>
+            <a href="#"><i class="fa fa-comments"></i> 5 Comments</a>
+          </div>
+          <!-- Media Gallery -->
+          <div class="blog-media">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/w2JUhDd0CAA" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!-- Text Intro -->
+          <div class="blog-item-body">
+            <p>
+              Morbi lacus massa, euismod ut turpis molestie, tristique sodales est. Integer sit amet mi id sapien tempor molestie in nec massa.
+            </p>
+          </div>
+            <!-- Read More Link -->
+          <div class="blog-item-foot">
+            <%= link_to blog_single_path, class: "btn btn-mod btn-round  btn-small", data: {no_turbolink: true} do %>
+              Read More <i class="fa fa-angle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Post -->
+
+        <!-- Post -->
+        <div class="blog-item">
+          <!-- Date -->
+          <div class="blog-item-date">
+            <span class="date-num">07</span>Feb
+          </div>
+          <!-- Post Title -->
+          <h2 class="blog-item-title font-alt"><%= link_to "Post with text only", blog_single_path, data: {no_turbolink: true} %></h2>
+          <!-- Author, Categories, Comments -->
+          <div class="blog-item-data">
+            <a href="#"><i class="fa fa-user"></i> John Doe</a>
+            <span class="separator">&nbsp;</span>
+            <i class="fa fa-folder-open"></i>
+            <a href="">Design</a>, <a href="#">Branding</a>
+            <span class="separator">&nbsp;</span>
+            <a href="#"><i class="fa fa-comments"></i> 5 Comments</a>
+          </div>
+          <!-- Text Intro -->
+          <div class="blog-item-body">
+            <p>
+              Suspendisse accumsan interdum tellus, eu imperdiet lacus consectetur sed. Aliquam in ligula ac lacus blandit commodo vel luctus quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eu ultrices mauris.
+            </p>
+          </div>
+          <!-- Read More Link -->
+          <div class="blog-item-foot">
+            <%= link_to blog_single_path, class: "btn btn-mod btn-round  btn-small", data: {no_turbolink: true} do %>
+              Read More <i class="fa fa-angle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Post -->
+
+        <!-- Post -->
+        <div class="blog-item">
+          <!-- Date -->
+          <div class="blog-item-date">
+              <span class="date-num">27</span>Jan
+          </div>
+          <!-- Post Title -->
+          <h2 class="blog-item-title font-alt"><%= link_to "Image post only", blog_single_path, data: {no_turbolink: true} %></h2>
+          <!-- Author, Categories, Comments -->
+          <div class="blog-item-data">
+            <a href="#"><i class="fa fa-user"></i> John Doe</a>
+            <span class="separator">&nbsp;</span>
+            <i class="fa fa-folder-open"></i>
+            <a href="">Design</a>, <a href="#">Branding</a>
+            <span class="separator">&nbsp;</span>
+            <a href="#"><i class="fa fa-comments"></i> 5 Comments</a>
+          </div>
+          <!-- Image -->
+          <div class="blog-media">
+            <%= link_to blog_single_path,data: {no_turbolink: true} do %>
+              <%= image_tag "full-project-4.jpg", alt: "" %>
+            <% end %>
+          </div>
+          <!-- Text Intro -->
+          <div class="blog-item-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend. Aliquam ac libero et diam rutrum rutrum. Nullam interdum mattis ipsum at convallis.
+            </p>
+          </div>
+          <!-- Read More Link -->
+          <div class="blog-item-foot">
+            <%= link_to blog_single_path, class: "btn btn-mod btn-round  btn-small", data: {no_turbolink: true} do %>
+              Read More <i class="fa fa-angle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Post -->
+        <!-- Pagination -->
+        <div class="pagination">
+          <a href=""><i class="fa fa-angle-left"></i></a>
+          <a href="" class="active">1</a>
+          <a href="">2</a>
+          <a href="">3</a>
+          <a class="no-active">...</a>
+          <a href="">9</a>
+          <a href=""><i class="fa fa-angle-right"></i></a>
+        </div>
+        <!-- End Pagination -->
+      </div>
+      <!-- End Content -->
+    </div>
+  </div>
+</section>
+<!-- End Section -->
