@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: diamonfire_development
+  database: diamon_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: diamonfire_test
+  database: diamon_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: diamonfire_production
-  username: diamonfire
+  database: diamon_production
+  username: diamon
   password: <%= ENV['DEMOSQL_DATABASE_PASSWORD'] %>
