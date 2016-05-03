@@ -1,5 +1,5 @@
 <!-- Navigation panel -->
-<nav class="main-nav dark transparent stick-fixed">
+<nav class="main-nav dark <%= 'transparent' if controller.action_name == 'home' %> stick-fixed">
   <div class="full-wrapper relative clearfix">
     <!-- Logo ( * your text or image into link tag *) -->
     <div class="nav-logo-wrap local-scroll">
@@ -21,6 +21,11 @@
         <li><a href="#">Stores</a></li>
         <li><%= link_to "Shop", shop_path, data: {no_turbolink: true} %></li>
         <li><%= link_to "Blog", blog_path, data: {no_turbolink: true} %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Login/Registration", new_user_session_path, data: {no_turbolink: true} %></li>
+        <% end %>
       </ul>
     </div>
   </div>
