@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
   attr_accessor :login
+  enum position: [:member, :admin]
 
   ATTRIBUTES = [:name, :username, :email, :phone_number, :address, :province, :password,
     :password_confirmation, :current_password]
