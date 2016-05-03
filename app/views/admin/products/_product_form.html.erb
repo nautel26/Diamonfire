@@ -1,0 +1,58 @@
+<%= form_for product do |f| %>
+  <%= f.label :price %><br>
+  <%= f.text_field :price %><br>
+  <%= f.label :sku %><br>
+  <%= f.text_field :sku %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+  <%= f.label :category_id %>
+  <%= f.select :category_id, options_for_select(categories, f.object.category_id) %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.file_field :images, accept: "image/png,image/gif,image/jpeg", multiple: true, style: "display:none" %>
+  <% if attachments.present? %>
+    <%= render partial: "image", collection: attachments, as: :image %>
+  <% end %>
+  <div id="image_preview"></div>
+  <%= button_tag "Add image", id: "add_image" %>
+  <br>
+  <%= f.submit "Submit", id: "submit_product" %>
+<% end %>
+
+<script type="text/javascript">
+  <%= render "image.js", attachments: attachments %>
+  <%= render "submit_form.js" %>
+</script>
+
+<style type="text/css">
+  .image_wrap {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+  }
+  .image_wrap .close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 5px 2px 2px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: .2;
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+  }
+  .image_wrap:hover .close {
+    opacity: 1;
+  }
+  .thumb_image {
+    float: left;
+    width: 150px;
+    position: relative;
+    padding: 5px;
+  }
+</style>

@@ -22,7 +22,7 @@
     <%= content_for :page_loader %>
     <div class="page" id="top">
       <%= content_for :home_section %>
-      <%= render "layouts/header" %>
+      <%-# render "layouts/header" -%>
       <%= render "layouts/flash" %>
       <%= yield %>
       <%= render "layouts/footer" unless controller.action_name == "home" %>
