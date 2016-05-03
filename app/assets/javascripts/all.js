@@ -1115,3 +1115,8 @@ function init_masonry(){
     })(jQuery);
 }
 
+
+/* set flash */
+setTimeout(function(){
+  $("#alert-message").alert("close");
+},  3000);

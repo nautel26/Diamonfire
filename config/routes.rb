@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :products
+
+  namespace :admin do
+    resources :dashboards
+    root to: "dashboards#index"
+  end
 end
