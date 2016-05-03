@@ -23,7 +23,9 @@
     <div class="page" id="top">
       <%= content_for :home_section %>
       <%= render "layouts/header" %>
+      <%= render "layouts/flash" %>
       <%= yield %>
+      <%= render "layouts/footer" unless controller.action_name == "home" %>
     </div>
     <!-- JS -->
     <%= javascript_include_tag 'all.js', 'data-turbolinks-track' => true %>

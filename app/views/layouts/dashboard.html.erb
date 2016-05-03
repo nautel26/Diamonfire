@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="fixed">
+  <head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <title><%= full_title yield(:title) %></title>
+    <meta name="keywords" content="Admin Dashboard" />
+    <meta name="description" content="Admin Dashboard">
+    <meta name="author" content="trungnn142">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+      maximum-scale=1.0, user-scalable=no" />
+    <!-- Vendor CSS -->
+    <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+    <!-- Specific Page Vendor CSS -->
+    <%= content_for :specific_page_css %>
+    <!-- Theme CSS -->
+    <%= stylesheet_link_tag    'admin/theme.css', 'admin/default.css',
+      'admin/theme-custom.css', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'admin/modernizr' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <section class="body">
+      <%= render "layouts/admin_header" %>
+      <div class="inner-wrapper">
+        <%= render "layouts/admin_sidebar_left" %>
+        <section role="main" class="content-body">
+          <header class="page-header">
+            <h2><%= content_for :page_header %></h2>
+            <div class="right-wrapper pull-right">
+              <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+            </div>
+          </header>
+          <%= yield %>
+        </section>
+      </div>
+      <%= render "layouts/admin_sidebar_right" %>
+    </section>
+    <%= render "layouts/modal" %>
+    <!-- Vendor -->
+    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
+    <!-- Specific Page Vendor  JS-->
+    <%= content_for :specific_page_js %>
+    <!-- Theme Base, Components and Settings -->
+    <%= javascript_include_tag 'admin/theme.js', 'admin/theme.custom.js',
+      'admin/theme.init.js', 'data-turbolinks-track' => true %>
+  </body>
+</html>
