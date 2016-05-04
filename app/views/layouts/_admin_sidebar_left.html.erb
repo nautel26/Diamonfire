@@ -51,6 +51,32 @@
               <li><%= link_to "Add file", "#" %></li>
             </ul>
           </li>
+          <li class="nav-parent">
+            <a><i class="fa fa-tasks" aria-hidden="true"></i><span> <%= "UI Elements" %> </span></a>
+            <ul class="nav nav-children">
+              <li><%= link_to "Typography", admin_element_path(element: "typography") %></li>
+              <li><%= link_to "Icon", admin_element_path(element: "icon") %></li>
+              <li><%= link_to "Tab", admin_element_path(element: "tab") %></li>
+              <li><%= link_to "Panel", admin_element_path(element: "panel") %></li>
+              <li><%= link_to "Buttons", admin_element_path(element: "button") %></li>
+              <li><%= link_to "Alerts", admin_element_path(element: "alert") %></li>
+              <li><%= link_to "Notifications", admin_element_path(element: "notification") %></li>
+              <li><%= link_to "Modals", admin_element_path(element: "modal") %></li>
+              <li><%= link_to "Progressbars", admin_element_path(element: "progressbar") %></li>
+              <li><%= link_to "Accordions", admin_element_path(element: "accordion") %></li>
+              <li><%= link_to "Grid systems", admin_element_path(element: "grid") %></li>
+              <li><%= link_to "Table", admin_element_path(element: "table") %></li>
+            </ul>
+          </li>
+          <li class="nav-parent">
+            <a><i class="fa fa-list-alt" aria-hidden="true"></i><span> <%= "Forms" %> </span></a>
+            <ul class="nav nav-children">
+              <li><%= link_to "Basic", admin_form_path(form: "basic"), data: {no_turbolink: true} %></li>
+              <li><%= link_to "Advanced", admin_form_path(form: "advanced"), data: {no_turbolink: true} %></li>
+              <li><%= link_to "Layouts", admin_form_path(form: "layout"), data: {no_turbolink: true} %></li>
+              <li><%= link_to "Validation", admin_form_path(form: "validation"), data: {no_turbolink: true} %></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
