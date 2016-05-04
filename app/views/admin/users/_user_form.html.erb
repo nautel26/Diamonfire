@@ -1,0 +1,17 @@
+<%= form_for [:admin, user] do |f| %>
+  <%= render "shared/error_messages", object: user %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label :phone_number %><br>
+  <%= f.text_field :phone_number %><br>
+  <%= f.label :address %><br>
+  <%= f.text_field :address %><br>
+  <%= f.label :province %><br>
+  <%= f.text_field :province %><br>
+  <%= f.label :position %><br>
+  <%= f.select :position, options_for_select(User.generate_position_collection, f.object.position) %><br>
+  <% submit_label = user.id ? "update" : "create" %>
+  <%= f.submit t(".#{submit_label}"), data: {confirm: t(".submit_confirm")} %>
+<% end %>
