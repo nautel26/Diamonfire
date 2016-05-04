@@ -10,3 +10,5 @@ en:
         update: Cập nhật
         create: Tạo mới
         submit_confirm: Bạn có chắc muốn lưu lại thông tin của người dùng
+  shared:
+    delete_confirm: Bạn thực sự muốn xóa ?

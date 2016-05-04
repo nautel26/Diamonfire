@@ -1,0 +1,9 @@
+<% if @status %>
+  var category_detail = $("tr[category_id='<%= @category.id %>']");
+  category_detail.find(".category_name").html("<%= @category.name %>");
+  category_detail.find(".category_description").html("<%= @category.description %>");
+  category_detail.show();
+  category_detail.next(".category_form").hide();
+<% else %>
+  alert("Co loi khi save");
+<% end %>
