@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboards
+    get "element" => "dashboards#element"
+    get "form" => "dashboards#form"
     root to: "dashboards#index"
     resources :products
   end

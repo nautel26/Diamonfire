@@ -6,6 +6,6 @@ class UserDecorator < Draper::Decorator
   end
 
   def show_title
-    name.presence || username.presence || email.split("@").first
+    username.presence || email.split("@").first || name.presence
   end
 end
