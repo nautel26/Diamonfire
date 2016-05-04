@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :dashboards
     root to: "dashboards#index"
     resources :products
+    resources :users, except: [:new, :create, :show]
   end
 end

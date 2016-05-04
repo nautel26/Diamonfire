@@ -1,5 +1,5 @@
 <div class="errors"></div>
-<%= form_for product do |f| %>
+<%= form_for [:admin, product] do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :price %><br>

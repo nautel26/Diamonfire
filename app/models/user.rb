@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
       where(conditions.to_h).first
     end
   end
+
+  class << self
+    def generate_position_collection
+      positions.map do |position, _|
+        [I18n.t("admin.users.position.#{position}"), position]
+      end
+    end
+  end
 end
