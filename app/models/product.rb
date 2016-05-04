@@ -6,4 +6,6 @@ class Product < ActiveRecord::Base
   has_many :attachments, as: :attachable, dependent: :destroy
 
   ATTRIBUTES = [:name, :price, :sku, :description, :category_id]
+
+  validates :price, presence: true
 end

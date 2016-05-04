@@ -1,4 +1,7 @@
+<div class="errors"></div>
 <%= form_for product do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
   <%= f.label :price %><br>
   <%= f.text_field :price %><br>
   <%= f.label :sku %><br>
@@ -7,8 +10,6 @@
   <%= f.text_area :description %><br>
   <%= f.label :category_id %>
   <%= f.select :category_id, options_for_select(categories, f.object.category_id) %><br>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
   <%= f.file_field :images, accept: "image/png,image/gif,image/jpeg", multiple: true, style: "display:none" %>
   <% if attachments.present? %>
     <%= render partial: "image", collection: attachments, as: :image %>
@@ -19,10 +20,12 @@
   <%= f.submit "Submit", id: "submit_product" %>
 <% end %>
 
-<script type="text/javascript">
-  <%= render "image.js", attachments: attachments %>
-  <%= render "submit_form.js" %>
-</script>
+<% content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "image.js", attachments: attachments %>
+    <%= render "submit_form.js" %>
+  </script>
+<% end %>
 
 <style type="text/css">
   .image_wrap {
