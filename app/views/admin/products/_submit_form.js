@@ -22,15 +22,8 @@ $("#submit_product").on("click", function(e) {
     url: request_url,
     method: method,
     data: formData,
-    dataType: "JSON",
+    dataType: "script",
     processData: false,
-    contentType: false,
-    success: function(response) {
-      if (response.status) {
-        window.location.replace("<%= admin_products_path %>");
-      } else {
-        alert(response.status);
-      }
-    }
+    contentType: false
   });
 });

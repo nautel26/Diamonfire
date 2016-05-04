@@ -1,6 +1,6 @@
-class Admin::ProductsController < ApplicationController
-  before_action :get_current_product, only: [:edit, :update]
-  before_action :get_collections, only: [:new, :edit]
+class Admin::ProductsController < Admin::BaseController
+  before_action :get_current_product, only: [:edit, :update, :destroy]
+  before_action :get_collections
 
   def index
     @products = Product.all
@@ -11,30 +11,33 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new product_params
-    status = product.save
-    if status
+    @product = Product.new product_params
+    @status = @product.save
+    if @status
       flash[:notice] = "Create product successfully"
       Array(params[:product][:images]).each do |image|
-        product.attachments.create file: image
+        @product.attachments.create file: image
       end
     end
-    render json: {status: status}
   end
 
   def edit
   end
 
   def update
-    status = @product.update_attributes product_params
-    if status
+    @status = @product.update_attributes product_params
+    if @status
       flash[:notice] = "Update product successfully"
       Array(params[:product][:images]).each do |image|
         @product.attachments.create file: image
       end
       Attachment.where(id: Array(params[:product][:removed_image_ids])).destroy_all
     end
-    render json: {status: status}
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to admin_products_path
   end
 
   private

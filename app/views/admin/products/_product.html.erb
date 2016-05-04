@@ -1,3 +1,6 @@
 <div>
   <%= link_to product.name, edit_admin_product_path(product) %>
+  <%= link_to admin_product_path(product), method: :delete, data: {confirm: "Are you sure?"} do %>
+    <%= button_tag "Delete" %>
+  <% end %>
 </div>

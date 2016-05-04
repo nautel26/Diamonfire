@@ -34,5 +34,5 @@ $(document).on("click", ".image_wrap .close", function() {
 });
 
 function image_wrap(src, image_id) {
-  return "<div class='image_wrap' image_id='" + image_id + "'><span class='close'>&times;</span><img src='" + src + "' class='thumb_image'></img></div>"
+  return "<div class='image_wrap' image_id='" + image_id + "'><span class='close'><i class='fa fa-trash-o' aria-hidden='true'></i></span><img src='" + src + "' class='thumb_image'></img></div>"
 }

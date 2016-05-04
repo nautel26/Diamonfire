@@ -1,0 +1,5 @@
+<% if @status %>
+  window.location.replace("<%= admin_products_path %>");
+<% else %>
+  $(".errors").html("<%= j render 'shared/error_messages', product: @product %>");
+<% end %>
