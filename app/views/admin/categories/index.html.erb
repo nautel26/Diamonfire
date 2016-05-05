@@ -1,0 +1,31 @@
+<div class="panel-body">
+  <div class="table-responsive">
+    <table class="table table-hover mb-none">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".description" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each_with_index do |category, index| %>
+          <%= render "category", category: category, index: index %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "modify_category.js" %>
+  </script>
+<% end %>
+
+<style type="text/css">
+  .category_description {
+    width: 100%;
+  }
+</style>

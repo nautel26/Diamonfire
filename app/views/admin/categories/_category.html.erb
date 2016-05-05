@@ -1,0 +1,30 @@
+<tr category_id="<%= category.id %>" class="category_detail">
+  <td><%= index + 1 %></td>
+  <td class="category_name"><%= category.name %></td>
+  <td class="category_description"><%= category.description %></td>
+  <td>
+    <%= link_to "#", class: "edit_category" do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+    <%= link_to(admin_category_path(category), method: :delete, data: {confirm: t("shared.delete_confirm")}) do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>
+<tr class="category_form" style="display: none">
+  <td><%= index + 1 %></td>
+  <td>
+    <%= text_field_tag "category_name", nil, class: "category_name" %>
+  </td>
+  <td>
+    <%= text_field_tag "category_description", nil, class: "category_description" %>
+  </td>
+  <td>
+    <%= link_to "#", class: "save_category" do %>
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to "#", class: "cancel_edit_category" do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

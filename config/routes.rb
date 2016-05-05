@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     root to: "dashboards#index"
     resources :products
     resources :users, except: [:new, :create, :show]
+    resources :categories
   end
 end
