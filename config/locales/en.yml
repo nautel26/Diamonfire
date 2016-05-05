@@ -12,3 +12,4 @@ en:
         submit_confirm: Bạn có chắc muốn lưu lại thông tin của người dùng
   shared:
     delete_confirm: Bạn thực sự muốn xóa ?
+    attachment_invalid: Co anh khong hop le, da tu dong loai bo.

@@ -12,11 +12,14 @@ $("#submit_product").on("click", function(e) {
 
   $.each(images, function(index, image) {
     formData.append("product[images][]", image);
+    formData.append("product[image_ids][]", String(image.lastModified) + "_" + image.name);
   });
 
   $.each(removed_image_ids, function(index, image_id) {
     formData.append("product[removed_image_ids][]", image_id);
   });
+
+  formData.append("product[featured_image_id]", featured_image_id);
 
   $.ajax({
     url: request_url,

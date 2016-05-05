@@ -48,7 +48,7 @@
         <div class="panel-body" style="position: relative;">
           <%= f.file_field :images, accept: "image/png,image/gif,image/jpeg", multiple: true, style: "display:none" %>
           <% if attachments.present? %>
-            <%= render partial: "image", collection: attachments, as: :image %>
+            <%= render partial: "image", collection: attachments, as: :image, locals: {product: product} %>
           <% end %>
           <div id="image_preview"></div>
           <%= button_tag "SELECT IMAGE", id: "add_image", class: "btn btn-success" %>
