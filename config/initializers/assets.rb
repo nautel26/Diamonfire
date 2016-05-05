@@ -14,5 +14,5 @@ assets_javascripts = %w(all.js jquery.backgroundvideo.min.js jquery.mb.YTPlayer.
   bootstrap-multiselect.js bootstrap-tagsinput.js dropzone.js jquery.validate.js)
 assets_stylesheets = %w(select2.css admin/theme.css admin/default.css admin/theme-custom.css
   bootstrap-fileupload.min.css bootstrap-multiselect.css bootstrap-tagsinput.css
-  basic.css dropzone.css.scss)
+  dropzone/basic.css dropzone/dropzone.css)
 Rails.application.config.assets.precompile += assets_javascripts + assets_stylesheets

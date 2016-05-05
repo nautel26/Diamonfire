@@ -23,7 +23,7 @@ $("#product_images").on("change", function() {
   $(this).val("");
 });
 
-$(document).on("click", ".image_wrap .close", function() {
+$(document).on("click", ".image_wrap i", function() {
   var img_wrap = $(this).closest(".image_wrap");
   var image_id = img_wrap.attr("image_id");
   delete images[image_id];
@@ -33,6 +33,13 @@ $(document).on("click", ".image_wrap .close", function() {
   img_wrap.remove();
 });
 
+$(document).on("dblclick", ".image_wrap img", function() {
+  $(".image_wrap .thumber").remove();
+  var img_wrap = $(this).closest(".image_wrap");
+  img_wrap.append("<i class='fa thumber fa-star'></i>");
+});
+
 function image_wrap(src, image_id) {
-  return "<div class='image_wrap' image_id='" + image_id + "'><span class='close'><i class='fa fa-trash-o' aria-hidden='true'></i></span><img src='" + src + "' class='thumb_image'></img></div>"
+  return "<div class='image_wrap' image_id='" + image_id + "'><img src='" + src +
+    "' class='thumb_image'></img><i class='fa deleter fa-trash-o' aria-hidden='true'></i></div>"
 }

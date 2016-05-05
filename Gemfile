@@ -24,6 +24,7 @@ gem "kaminari"
 gem "pundit"
 gem "draper"
 gem "ransack"
+gem "dropzonejs-rails"
 
 group :development, :test do
   gem "pry-rails"

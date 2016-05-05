@@ -1,2 +1,5 @@
+<% content_for(:page_header) do %>
+  New Product
+<% end %>
 <%= render "product_form", product: @product,
   categories: @categories, attachments: @attachments %>
